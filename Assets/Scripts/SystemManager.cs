@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SystemManager : MonoBehaviour
+namespace MODI.MissionPlan
 {
-
-    [SerializeField] Transform parent;
-   
-
-    public void CreateObject(GameObject obj)
+    public class SystemManager : MonoBehaviour
     {
-        Instantiate(obj, parent);
+
+        [SerializeField] Transform parent;
+
+
+        public void CreateObject(GameObject obj)
+        {
+            Instantiate(obj, parent);
+        }
     }
 }
