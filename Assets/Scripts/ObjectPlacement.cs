@@ -6,8 +6,10 @@ namespace MODI.MissionPlan
 {
     public class ObjectPlacement : MonoBehaviour
     {
+        [SerializeField] LayerMask terrian;
+        
         Camera cam;
-        bool isplaced;
+        public bool isplaced;
         // Start is called before the first frame update
         void Start()
         {
@@ -36,12 +38,18 @@ namespace MODI.MissionPlan
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitdata;
-            if (Physics.Raycast(ray, out hitdata))
+            if (Physics.Raycast(ray, out hitdata , int.MaxValue , terrian))
             {
                 transform.position = hitdata.point;
             }
         }
 
+
+        private void OnMouseDown()
+        {
+            if (!isplaced) return;
+            SystemManager.instance.EditingPanel(gameObject);
+        }
 
 
     }

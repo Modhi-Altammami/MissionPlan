@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3741799209603024316}
   - component: {fileID: 8062150225636889700}
+  - component: {fileID: 5286588750686430786}
   m_Layer: 0
   m_Name: LightInfantary
   m_TagString: Untagged
@@ -45,6 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64852f41ca0f946aab3925cdbcf3d0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrian:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!65 &5286588750686430786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741799209603024317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 12, z: 8}
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &7735062625904701057
 GameObject:
   m_ObjectHideFlags: 0

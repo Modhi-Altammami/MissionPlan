@@ -545,6 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446272200705001538}
   - component: {fileID: 4811259366077138972}
+  - component: {fileID: 7925942800832199690}
   m_Layer: 0
   m_Name: Transportation
   m_TagString: Untagged
@@ -580,3 +581,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64852f41ca0f946aab3925cdbcf3d0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrian:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!65 &7925942800832199690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446272200705001539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17, y: 14, z: 35}
+  m_Center: {x: 0, y: 7, z: -4}

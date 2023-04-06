@@ -458,6 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608931362935254483}
   - component: {fileID: 6953877490509593592}
+  - component: {fileID: 7760559866425834087}
   m_Layer: 0
   m_Name: Armor
   m_TagString: Untagged
@@ -493,6 +494,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64852f41ca0f946aab3925cdbcf3d0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrian:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!65 &7760559866425834087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608931362935254482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.12, y: 18, z: 55}
+  m_Center: {x: 0, y: 11, z: -8}
 --- !u!1 &1666362919185876387
 GameObject:
   m_ObjectHideFlags: 0
