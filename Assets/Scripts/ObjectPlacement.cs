@@ -10,6 +10,7 @@ namespace MODI.MissionPlan
         
         Camera cam;
         public bool isplaced;
+        bool isRotated;
         [SerializeField]List<Material> materials;
         // Start is called before the first frame update
         void Start()
@@ -25,12 +26,24 @@ namespace MODI.MissionPlan
             if (Input.GetMouseButtonDown(0))
             {
                 isplaced = true;
-
             }
+
 
             if (!isplaced)
             {
                 PlaceObject();
+            }
+            else
+            {
+                if (!isRotated)
+                {
+                    transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * 50f);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    isRotated=true;
+                }
             }
 
         }
@@ -50,6 +63,8 @@ namespace MODI.MissionPlan
         private void OnMouseDown()
         {
             if (!isplaced) return;
+            
+          
             SystemManager.instance.EditingPanel(gameObject);
         }
 
