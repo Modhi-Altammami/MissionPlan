@@ -10,9 +10,12 @@ namespace MODI.MissionPlan
 
         [SerializeField] Transform parent;
         [SerializeField] GameObject editPanel;
+        [SerializeField] TextMeshProUGUI unitName;
+        [SerializeField] TextMeshProUGUI unitCoordinates;
+        [SerializeField] TextMeshProUGUI unitAltitude;
         public static SystemManager instance;
         GameObject currentObj;
-
+        char upArrow = '↑';
         private void Awake()
         {
             if (instance == null)
@@ -33,7 +36,10 @@ namespace MODI.MissionPlan
         public void EditingPanel(GameObject obj)
         {
             currentObj = obj;
-            editPanel.GetComponentInChildren<TextMeshProUGUI>().text = obj.name;
+            unitName.text = obj.name;
+            unitCoordinates.text="X:"+ System.Math.Round(obj.gameObject.transform.position.x,2)+
+                ", Z:"+ System.Math.Round(obj.gameObject.transform.position.z, 2);
+            unitAltitude.text = upArrow +" "+ System.Math.Round(obj.gameObject.transform.position.y, 2);
             editPanel.SetActive(true);
         }
 
