@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 namespace MODI.MissionPlan
 {
     public class CameraMovement : MonoBehaviour
     {
+
+
         Vector3 targetPos;
         private void Start()
         {
@@ -39,19 +40,24 @@ namespace MODI.MissionPlan
                 targetPos.z = targetPos.z - 5;
             }
             // up / down
-            if (Input.GetKeyDown(KeyCode.Space) && transform.position.y > 100)
+
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                targetPos.y = targetPos.y + 5;
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
             {
                 targetPos.y = targetPos.y - 5;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape) && transform.position.y < 300)
-            {
-                targetPos.y = targetPos.y + 5;
-            }
 
+            Vector3.MoveTowards(transform.position, targetPos, float.MaxValue);
             transform.position = targetPos;
         }
 
+
+      
+    
+        }
         
     }
-}

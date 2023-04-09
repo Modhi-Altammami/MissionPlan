@@ -49,6 +49,8 @@ namespace MODI.MissionPlan
         {
             currentObj.GetComponent<ObjectPlacement>().isplaced = false;
             currentObj = null;
+            editPanel.SetActive(false);
+
         }
         public void Close()
         {
