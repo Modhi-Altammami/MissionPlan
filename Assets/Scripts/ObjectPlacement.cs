@@ -11,12 +11,13 @@ namespace MODI.MissionPlan
         Camera cam;
         public bool isplaced;
         public bool isRotated;
-        [SerializeField]List<Material> materials;
+        [SerializeField] MeshRenderer materials;
         // Start is called before the first frame update
         void Start()
         {
             cam = Camera.main;
-            
+           // materials = GetComponentInChildren<MeshRenderer>();
+            Debug.Log(materials);
         }
 
         // Update is called once per frame
@@ -77,19 +78,17 @@ namespace MODI.MissionPlan
 
         private void OnMouseOver()
         {
-            foreach(Material m in materials)
-            {
-                m.EnableKeyword("_EMISSION");
-            }
+            if (!isplaced) return;
+            materials.material.EnableKeyword("_EMISSION");
+            
         }
 
 
         private void OnMouseExit()
         {
-            foreach (Material m in materials)
-            {
-                m.DisableKeyword("_EMISSION");
-            }
+            if (!isplaced) return;
+            materials.material.DisableKeyword("_EMISSION");
+            
         }
 
     }

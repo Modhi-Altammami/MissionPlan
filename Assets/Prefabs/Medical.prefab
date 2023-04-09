@@ -102,8 +102,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isplaced: 0
-  materials:
-  - {fileID: 2100000, guid: 735213eb97a5c4cfdbbf2f5d3522f143, type: 2}
+  isRotated: 0
+  materials: {fileID: 1299866067489705980}
 --- !u!65 &3966421039144316522
 BoxCollider:
   m_ObjectHideFlags: 0
