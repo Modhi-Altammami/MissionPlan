@@ -49,6 +49,10 @@ MonoBehaviour:
   terrian:
     serializedVersion: 2
     m_Bits: 64
+  isplaced: 0
+  materials:
+  - {fileID: 2100000, guid: 69c0fd068809d2a4cafbb12fd8e38326, type: 2}
+  - {fileID: 2100000, guid: f1ffde0cab3b53e4b8db6c78d825b21a, type: 2}
 --- !u!65 &5286588750686430786
 BoxCollider:
   m_ObjectHideFlags: 0

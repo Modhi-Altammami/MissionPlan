@@ -10,10 +10,12 @@ namespace MODI.MissionPlan
         
         Camera cam;
         public bool isplaced;
+        [SerializeField]List<Material> materials;
         // Start is called before the first frame update
         void Start()
         {
             cam = Camera.main;
+            
         }
 
         // Update is called once per frame
@@ -51,6 +53,22 @@ namespace MODI.MissionPlan
             SystemManager.instance.EditingPanel(gameObject);
         }
 
+        private void OnMouseOver()
+        {
+            foreach(Material m in materials)
+            {
+                m.EnableKeyword("_EMISSION");
+            }
+        }
+
+
+        private void OnMouseExit()
+        {
+            foreach (Material m in materials)
+            {
+                m.DisableKeyword("_EMISSION");
+            }
+        }
 
     }
 
