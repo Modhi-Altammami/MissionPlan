@@ -13,6 +13,8 @@ namespace MODI.MissionPlan
         [SerializeField] TextMeshProUGUI unitName;
         [SerializeField] TextMeshProUGUI unitCoordinates;
         [SerializeField] TextMeshProUGUI unitAltitude;
+        [SerializeField] TextMeshProUGUI Date;
+        [SerializeField] GameObject menu;
         public static SystemManager instance;
         GameObject currentObj;
         char upArrow = '↑';
@@ -26,6 +28,13 @@ namespace MODI.MissionPlan
             {
                 Destroy(gameObject);
             }
+
+        }
+
+        private void Update()
+        {
+            Date.text = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+            
         }
 
         public void CreateObject(GameObject obj)
@@ -35,6 +44,7 @@ namespace MODI.MissionPlan
 
         public void EditingPanel(GameObject obj)
         {
+            menu.SetActive(false);
             currentObj = obj;
             unitName.text = obj.name;
             unitCoordinates.text="X:"+ System.Math.Round(obj.gameObject.transform.position.x,2)+
@@ -48,11 +58,13 @@ namespace MODI.MissionPlan
         {
             Destroy(currentObj);
             currentObj = null;
+            menu.SetActive(true) ;
             editPanel.SetActive(false);
         }
 
         public void Reposition()
         {
+            menu.SetActive(true);
             currentObj.GetComponent<ObjectPlacement>().isplaced = false;
             currentObj = null;
             editPanel.SetActive(false);
@@ -60,8 +72,18 @@ namespace MODI.MissionPlan
         }
         public void Close()
         {
+            menu.SetActive(true);
             currentObj = null;
             editPanel.SetActive(false);
+        }
+
+        public void activateMenu()
+        {
+            menu.SetActive(true);
+        }
+        public void decativateMenu()
+        {
+            menu.SetActive(false);
         }
     }
 }

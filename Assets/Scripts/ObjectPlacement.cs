@@ -10,7 +10,7 @@ namespace MODI.MissionPlan
         
         Camera cam;
         public bool isplaced;
-        bool isRotated;
+        public bool isRotated;
         [SerializeField]List<Material> materials;
         // Start is called before the first frame update
         void Start()
@@ -45,7 +45,14 @@ namespace MODI.MissionPlan
                     isRotated=true;
                 }
             }
-
+            if (isplaced && isRotated)
+            {
+                SystemManager.instance.activateMenu();
+            }
+            else
+            {
+                SystemManager.instance.decativateMenu();
+            }
         }
 
 
