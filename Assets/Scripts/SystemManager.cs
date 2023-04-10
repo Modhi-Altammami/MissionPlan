@@ -63,6 +63,7 @@ namespace MODI.MissionPlan
         public void Reposition()
         {
             currentObj.GetComponent<ObjectPlacement>().isplaced = false;
+            currentObj.GetComponent<ObjectPlacement>().isRotated = false;
             currentObj = null;
             editPanel.SetActive(false);
 
