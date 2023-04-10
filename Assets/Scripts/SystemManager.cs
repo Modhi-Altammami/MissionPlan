@@ -44,7 +44,6 @@ namespace MODI.MissionPlan
 
         public void EditingPanel(GameObject obj)
         {
-            menu.SetActive(false);
             currentObj = obj;
             unitName.text = obj.name;
             unitCoordinates.text="X:"+ System.Math.Round(obj.gameObject.transform.position.x,2)+
@@ -58,13 +57,11 @@ namespace MODI.MissionPlan
         {
             Destroy(currentObj);
             currentObj = null;
-            menu.SetActive(true) ;
             editPanel.SetActive(false);
         }
 
         public void Reposition()
         {
-            menu.SetActive(true);
             currentObj.GetComponent<ObjectPlacement>().isplaced = false;
             currentObj = null;
             editPanel.SetActive(false);
@@ -72,7 +69,6 @@ namespace MODI.MissionPlan
         }
         public void Close()
         {
-            menu.SetActive(true);
             currentObj = null;
             editPanel.SetActive(false);
         }

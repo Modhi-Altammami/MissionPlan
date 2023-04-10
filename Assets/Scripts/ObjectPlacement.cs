@@ -7,17 +7,16 @@ namespace MODI.MissionPlan
     public class ObjectPlacement : MonoBehaviour
     {
         [SerializeField] LayerMask terrian;
-        
+         MeshRenderer materials;
+
         Camera cam;
         public bool isplaced;
         public bool isRotated;
-        [SerializeField] MeshRenderer materials;
         // Start is called before the first frame update
         void Start()
         {
             cam = Camera.main;
-           // materials = GetComponentInChildren<MeshRenderer>();
-            Debug.Log(materials);
+            materials = GetComponent<MeshRenderer>();
         }
 
         // Update is called once per frame
