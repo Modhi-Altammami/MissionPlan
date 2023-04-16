@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace MODI.MissionPlan
 {
@@ -14,6 +15,8 @@ namespace MODI.MissionPlan
         [SerializeField] TextMeshProUGUI unitCoordinates;
         [SerializeField] TextMeshProUGUI unitAltitude;
         [SerializeField] TextMeshProUGUI Date;
+        [SerializeField] TextMeshProUGUI angleDircetion;
+
         [SerializeField] GameObject menu;
         public static SystemManager instance;
         GameObject currentObj;
@@ -49,7 +52,11 @@ namespace MODI.MissionPlan
             unitCoordinates.text="X:"+ System.Math.Round(obj.gameObject.transform.position.x,2)+
                 ", Z:"+ System.Math.Round(obj.gameObject.transform.position.z, 2);
             unitAltitude.text = upArrow +" "+ System.Math.Round(obj.gameObject.transform.position.y, 2);
+            float angle = obj.gameObject.transform.eulerAngles.y;
+
+            angleDircetion.text = ExtentionMethods.AngleToDirection(angle);
             editPanel.SetActive(true);
+
         }
 
 

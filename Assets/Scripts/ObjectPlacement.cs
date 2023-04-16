@@ -70,7 +70,7 @@ namespace MODI.MissionPlan
         private void OnMouseDown()
         {
             if (!isplaced) return;
-            
+            if (!isRotated) return;
           
             SystemManager.instance.EditingPanel(gameObject);
         }
@@ -78,6 +78,7 @@ namespace MODI.MissionPlan
         private void OnMouseOver()
         {
             if (!isplaced) return;
+            if (!isRotated) return;
             materials.material.EnableKeyword("_EMISSION");
             
         }
@@ -86,6 +87,7 @@ namespace MODI.MissionPlan
         private void OnMouseExit()
         {
             if (!isplaced) return;
+            if (!isRotated) return;
             materials.material.DisableKeyword("_EMISSION");
             
         }
